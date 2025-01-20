@@ -102,11 +102,12 @@ h1 {
   border: 1px solid #ccc;
 }
 
-img {
+#gallery {
   /* Image dimensions and margin */
   height: 120px;
   width: 120px;
   margin: 0.5em;
+object-fit: cover;
 }
 
 #images {
@@ -130,7 +131,7 @@ img {
   /* Center description content */
   display: flex;
   align-items: center;
-  height: 4em;
+  height: auto;
   width: 35em;
   font-weight: 100;
   margin-left: 2em;
@@ -149,4 +150,14 @@ img {
     /* Adjust footer paragraph margin on smaller screens */
     margin: 5px 0;
   }
+}
+#largeimage{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  object-fit: contain;
+  justify-content: center;
+  align-items: center;
 }

@@ -16,6 +16,15 @@ const trees = [
   "./treeDrawings/tree4.jpg",
 ];
 
+const cadaverimages = [
+  "./313 A1 Thumbnail images/311 a1 gap image.png",
+  "./313 A1 Thumbnail images/311 a1 textures.png",
+  "./313 A1 Thumbnail images/311 a1 arches.png",
+  "./313 A1 Thumbnail images/311 a1 tech drawings.png",
+];
+
+const cadavermain= "./DSGN 313 a1.png";
+
 document.querySelector("#app").innerHTML = `
   <main id="container">
     <section id="heading">
@@ -25,19 +34,19 @@ document.querySelector("#app").innerHTML = `
 
     <section id="projects">
       <div id="project-row">
-      Model 1
+      Cadavre Exquis
         <div class="three-model">
-          <div id="model1"></div>
+          <div id="model1"><img src = "${cadavermain}" id =largeimage></div>
         </div>
         <div id="images-description">
           <div id="images">
-            ${cubes
+            ${cadaverimages
               .map(
-                (cube, index) => `<img src="${cube}" alt="cube${index + 1}" />`
+                (cube, index) => `<img src="${cube}" alt="cube${index + 1}" id="gallery" />`
               )
               .join("")}
           </div>
-          <h4 id="description">A cubic 3D model is a geometric representation of a cube, consisting of six equal square faces joined at right angles. Each edge of the cube is of equal length, forming a symmetrical, rigid structure. The model can be textured, colored, or transparent, and it may include variations such as beveled edges or hollow interiors, depending on its intended purpose in design, animation, or engineering.</h4>
+          <h4 id="description">This composition examines the inherent disconnect that results from the many transformations each building material goes through on its path to the urban environment. Now more than ever, manufacturing and processing change the optics, tactility, and general quality of materials often to the point of being unrecognizable. To that end, this composition takes materials in the same assembly, in this case, an arch, and contrasts them with similar forms composed of the ground or flora that aid in their creation. The main ‘gap’ between each pair of arches and their divergent forms make the transformations that occur legible. In the background, technical plans for common residential buildings contrast an array of textures corresponding to each material. This process took some reworking, especially representing an abstract set of concepts in such a way that lent itself to an ordered composition. Resorting to different levels of abstraction and accepting some more surreal visual choices served to help tie the work together.</h4>
         </div>
       </div>
 
@@ -51,7 +60,7 @@ document.querySelector("#app").innerHTML = `
             ${trees
               .map(
                 (trees, index) =>
-                  `<img src="${trees}" alt="tree${index + 1}" />`
+                  `<img src="${trees}" alt="tree${index + 1}" id="gallery"/>`
               )
               .join("")}
           </div>
@@ -68,7 +77,7 @@ document.querySelector("#app").innerHTML = `
           <div id="images">
             ${cubes
               .map(
-                (cube, index) => `<img src="${cube}" alt="cube${index + 1}" />`
+                (cube, index) => `<img src="${cube}" alt="cube${index + 1}" id="gallery"/>`
               )
               .join("")}
           </div>
@@ -91,6 +100,6 @@ document.querySelector("#app").innerHTML = `
 `;
 
 // Create three.js scenes for each
-createThreeScene("#model1", "/3DModels/project1/cube.obj");
+//createThreeScene("#model1", "/3DModels/project1/cube.obj");
 createThreeScene("#model2", "/3DModels/project2/tree.obj");
 createThreeScene("#model3", "/3DModels/project3/cottage.obj");
